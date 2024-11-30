@@ -1,0 +1,29 @@
+import java.io.*;
+import java.time.LocalDate;
+import java.util.Scanner;
+
+class Result {
+    public static String findDay(int month, int day, int year) {
+        LocalDate date = LocalDate.of(year, month, day);
+        return date.getDayOfWeek().toString(); // Returns the day of the week in uppercase (e.g., MONDAY)
+    }
+}
+
+public class Date {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for input
+        System.out.println("Enter the date in the format: month day year (e.g., 12 25 2024):");
+        int month = scanner.nextInt();
+        int day = scanner.nextInt();
+        int year = scanner.nextInt();
+
+        // Find and display the day
+        String res = Result.findDay(month, day, year);
+        System.out.println("The day of the week is: " + res);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
